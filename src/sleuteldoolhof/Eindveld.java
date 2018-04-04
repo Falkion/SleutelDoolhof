@@ -1,7 +1,7 @@
 
 package sleuteldoolhof;
 
-public class EindVeld extends VlakObject
+public class Eindveld extends VlakObject
 {
    public void eindigSpel()
    {

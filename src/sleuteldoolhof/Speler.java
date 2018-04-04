@@ -8,8 +8,8 @@ public class Speler extends VlakObject
        this.huidigeSleutel = huidigeSleutel; 
     }
 
-    public void getHuidigeSleutel() {
-       return this.huidigeSleutel = huidigeSleutel; 
+    public boolean getHuidigeSleutel() {
+       return this.huidigeSleutel; 
     }
 
     public void move() {
