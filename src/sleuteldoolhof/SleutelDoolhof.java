@@ -29,19 +29,18 @@ public class SleutelDoolhof {
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(xSize, ySize, 5, 5));
         
+        // zet labels in een array
         JLabel gridLabels[][] = new JLabel[10][10];
         for(int i=0;i<xSize;i++) {
             for(int j=0;j<ySize;j++) {
                 String label = Integer.toString(i) + Integer.toString(j);
-                System.out.print("X:");
-                System.out.print(i);
-                System.out.print("Y:");
-                System.out.println(j);
+                System.out.print("X:"); System.out.print(i);System.out.print("Y:");System.out.println(j);
                 gridLabels[i][j] = new JLabel(label);
             }
         }
         
         panel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+        // voeg jlabels toe aan grid
         for(int i=0;i<xSize;i++) {
             for(int j=0;j<ySize;j++) {
                 panel.add(gridLabels[i][j]);
