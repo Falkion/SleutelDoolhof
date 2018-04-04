@@ -5,6 +5,9 @@
  */
 package sleuteldoolhof;
 
+import java.awt.*;
+import javax.swing.*;
+
 /**
  *
  * @author nebbii
@@ -15,7 +18,14 @@ public class SleutelDoolhof {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here 
+        JFrame frame = new JFrame("Grid Layout");
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(500, 650);
+        
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(10, 10, 5, 5));
+        
    }
     
 }
