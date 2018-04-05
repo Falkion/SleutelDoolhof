@@ -27,12 +27,15 @@ public class SleutelDoolhof {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        /* Creating! */
+        
         JFrame frame = new JFrame("Sleutel Doolhof");
         JPanel panel = new JPanel();
         
         // create speelveld
         Speelveld speelveld = new Speelveld(10, 10);
-
+        
+        // place puzzle
         String[][][] vlakItems = speelveld.laadPuzzel1();
         
         panel.setLayout(new GridLayout(speelveld.getVlakBreedte(), speelveld.getVlakHoogte(), 5, 5));
@@ -48,6 +51,7 @@ public class SleutelDoolhof {
         }
         
         panel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+        
         // voeg jlabels toe aan grid
         for(int i=0;i < speelveld.getVlakBreedte(); i++) {
             for(int j=0; j < speelveld.getVlakHoogte(); j++) {
@@ -55,8 +59,12 @@ public class SleutelDoolhof {
             }
         }
         
+        /* End Creating! */
+        /* Rendering! */
+        
         // arrow controls!
         frame.addKeyListener(new KeyListener() {
+            @Override
             public void keyPressed(KeyEvent e) {
                 /**
                  * left=37
