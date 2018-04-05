@@ -78,6 +78,8 @@ public class SleutelDoolhof {
                  */
                 speler.move(speelveld, vlakItems, e.getKeyCode());
                 
+                vlakItems[speler.getXpos()][speler.getYpos()][0] = "Speler";
+                
                 for(int i=0;i < speelveld.getVlakBreedte(); i++) {
                     for(int j=0; j < speelveld.getVlakHoogte(); j++) {
                         gridLabels[i][j].setText(vlakItems[i][j][0]);

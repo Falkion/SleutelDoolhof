@@ -27,10 +27,10 @@ public class Speelveld {
         
         // borders
         for(int i=0;i<10;i++) {
-            puzzel[i][0][0] = "VasteMuur";
+            puzzel[i][0][0] = "Leegvlak";
         }
         for(int i=0;i<10;i++) {
-            puzzel[0][i][0] = "VasteMuur";
+            puzzel[0][i][0] = "Leegvlak";
         }
         
         return puzzel;
