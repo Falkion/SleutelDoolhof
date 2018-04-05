@@ -26,26 +26,30 @@ public class Speler extends VlakObject
         switch(key) {
             case 37: // left
                 n[0] -= 1;
-                if(grid[n[0]][n[1]][0] == "") {
-                    
+                if(this.checkFreeSpace(speelveld, grid, n)) {
+                    this.setXpos(n[0]);
+                    this.setYpos(n[1]);
                 }
                 break;
             case 38: // up
-                n[0] -= 1;
-                if(grid[n[0]][n[1]][0] == "") {
-                    
+                n[1] -= 1;
+                if(this.checkFreeSpace(speelveld, grid, n)) {
+                    this.setXpos(n[0]);
+                    this.setYpos(n[1]);
                 }
                 break;
             case 39: // right
                 n[0] += 1;
-                if(grid[n[0]][n[1]][0] == "") {
-                    
+                if(this.checkFreeSpace(speelveld, grid, n)) {
+                    this.setXpos(n[0]);
+                    this.setYpos(n[1]);
                 }
                 break;
             case 40: // down
                 n[1] += 1;
-                if(grid[n[0]][n[1]][0] == "") {
-                    
+                if(this.checkFreeSpace(speelveld, grid, n)) {
+                    this.setXpos(n[0]);
+                    this.setYpos(n[1]);
                 }
                 break;
             default:
