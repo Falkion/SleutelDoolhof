@@ -18,7 +18,7 @@ public class SleutelDoolhof {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Grid Layout");
+        JFrame frame = new JFrame("Sleutel Doolhof");
         JPanel panel = new JPanel();
         
         // create speelveld
