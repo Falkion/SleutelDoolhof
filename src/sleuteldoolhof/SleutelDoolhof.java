@@ -23,21 +23,6 @@ public class SleutelDoolhof {
         JFrame frame = new JFrame("Sleutel Doolhof");
         JPanel panel = new JPanel();
         
-        // keyboard listener
-        frame.addKeyListener(new KeyListener() {
-            public void keyPressed(KeyEvent e) {
-                System.out.println("keyPressed");
-            }
-
-            @Override
-            public void keyTyped(KeyEvent e) {
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
-            }
-        });
-        
         // create speelveld
         Speelveld speelveld = new Speelveld(10, 10);
 
@@ -63,11 +48,32 @@ public class SleutelDoolhof {
             }
         }
         
+        // keyboard listener
+        frame.addKeyListener(new KeyListener() {
+            public void keyPressed(KeyEvent e) {
+                System.out.println("keyPressed");
+                System.out.println(e.getKeyCode());
+                gridLabels[0][1].setText("HEY");
+            }
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+            }
+        });
+        
         frame.add(panel);
         
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 650);
         
+   }
+    
+   public void renderGrid() {
+       
    }
 }
