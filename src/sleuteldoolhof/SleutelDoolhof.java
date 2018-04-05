@@ -15,7 +15,14 @@ import java.awt.event.KeyListener;
  * @author nebbii
  */
 public class SleutelDoolhof {
-
+    
+    Speelveld speelveld;
+    JFrame frame;
+    JPanel panel;
+    
+    JLabel[][] gridLabels;
+    String[][][] vlakItems;
+    
     /**
      * @param args the command line arguments
      */
@@ -48,12 +55,20 @@ public class SleutelDoolhof {
             }
         }
         
-        // keyboard listener
+        // arrow controls!
         frame.addKeyListener(new KeyListener() {
             public void keyPressed(KeyEvent e) {
-                System.out.println("keyPressed");
-                System.out.println(e.getKeyCode());
-                gridLabels[0][1].setText("HEY");
+                /**
+                 * left=37
+                 * up=38
+                 * right=39
+                 * down=40
+                 */
+                for(int i=0;i < speelveld.getVlakBreedte(); i++) {
+                    for(int j=0; j < speelveld.getVlakHoogte(); j++) {
+                        gridLabels[i][j].setText(vlakItems[i][j][0]);
+                    }
+                }
             }
 
             @Override
@@ -70,10 +85,5 @@ public class SleutelDoolhof {
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 650);
-        
-   }
-    
-   public void renderGrid() {
-       
    }
 }
