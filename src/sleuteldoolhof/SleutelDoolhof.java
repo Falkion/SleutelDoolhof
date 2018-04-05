@@ -55,8 +55,8 @@ public class SleutelDoolhof {
         
    }
     
-    public char[][][] laadPuzzel1() {
-        String[][][] puzzel = new String[0][10][10][5];
+    public String[][][] laadPuzzel1() {
+        String[][][] puzzel = new String[10][10][5];
         
         for(int i=0;i<10;i++) {
             puzzel[i][0][0] = "VasteMuur";
@@ -65,12 +65,12 @@ public class SleutelDoolhof {
         return puzzel;
     }
     
-    public char[][][] laadPuzzel2() {
+    public String[][][] laadPuzzel2() {
         String[][][] puzzel = new String[10][10][5];
         return puzzel;
     }
     
-    public char[][][] laadPuzzel3() {
+    public String[][][] laadPuzzel3() {
         String[][][] puzzel = new String[10][10][5];
         return puzzel;
     }
