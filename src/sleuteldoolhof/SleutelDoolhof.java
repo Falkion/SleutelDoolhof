@@ -60,6 +60,9 @@ public class SleutelDoolhof {
             }
         }
         
+        // create player
+        Speler speler = new Speler(0, 0);
+        
         /* End Creating! */
         /* Rendering! */
         
@@ -73,6 +76,8 @@ public class SleutelDoolhof {
                  * right=39
                  * down=40
                  */
+                speler.move(speelveld, vlakItems, e.getKeyCode());
+                
                 for(int i=0;i < speelveld.getVlakBreedte(); i++) {
                     for(int j=0; j < speelveld.getVlakHoogte(); j++) {
                         gridLabels[i][j].setText(vlakItems[i][j][0]);
