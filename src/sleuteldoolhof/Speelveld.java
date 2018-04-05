@@ -10,5 +10,23 @@ package sleuteldoolhof;
  * @author Ben
  */
 public class Speelveld {
+    private int vlak_hoogte;
+    private int vlak_breedte;
     
+    public Speelveld(int vh, int vb) {
+        this.vlak_hoogte = vh;
+        this.vlak_breedte = vb;
+    }
+    
+    public void reset() {
+        
+    }
+    
+    public int getVlakHoogte() {
+        return vlak_hoogte;
+    }
+
+    public int getVlakBreedte() {
+        return vlak_breedte;
+    }
 }
