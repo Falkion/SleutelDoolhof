@@ -7,6 +7,8 @@ package sleuteldoolhof;
 
 import java.awt.*;
 import javax.swing.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 /**
  *
@@ -21,12 +23,25 @@ public class SleutelDoolhof {
         JFrame frame = new JFrame("Sleutel Doolhof");
         JPanel panel = new JPanel();
         
+        // keyboard listener
+        frame.addKeyListener(new KeyListener() {
+            public void keyPressed(KeyEvent e) {
+                System.out.println("keyPressed");
+            }
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+            }
+        });
+        
         // create speelveld
         Speelveld speelveld = new Speelveld(10, 10);
-        
-        String[][][] vlakItems = new String[10][10][5];
-        
-        vlakItems = speelveld.laadPuzzel1();
+
+        String[][][] vlakItems = speelveld.laadPuzzel1();
         
         panel.setLayout(new GridLayout(speelveld.getVlakBreedte(), speelveld.getVlakHoogte(), 5, 5));
         
@@ -36,7 +51,6 @@ public class SleutelDoolhof {
         // render ik field
         for(int i=0;i < speelveld.getVlakBreedte(); i++) {
             for(int j=0; j < speelveld.getVlakHoogte(); j++) {
-                System.out.print("X:"); System.out.print(i);System.out.print("Y:");System.out.println(j);
                 gridLabels[i][j] = new JLabel(vlakItems[i][j][0]);
             }
         }
@@ -48,7 +62,7 @@ public class SleutelDoolhof {
                 panel.add(gridLabels[i][j]);
             }
         }
-
+        
         frame.add(panel);
         
         frame.setVisible(true);
