@@ -52,6 +52,27 @@ public class Speler extends VlakObject
         }
     }
 
+    /**
+     * returns true if theres a free space
+     * 
+     * @param speelveld
+     * @param grid
+     * @param space
+     * @return 
+     */
+    public boolean checkFreeSpace(Speelveld speelveld, String[][][] grid, int[] space) {
+        if((space[0] >= 0) && (space[0] < speelveld.getVlakBreedte())
+            && ((space[1] >= 0) && (space[1] < speelveld.getVlakBreedte()))) {
+            if("".equals(grid[space[0]][space[1]][0])) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+    
     public void SleutelOppakken(boolean huidigeSleutel) {
 
     }
