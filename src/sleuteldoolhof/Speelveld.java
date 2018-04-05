@@ -22,6 +22,30 @@ public class Speelveld {
         
     }
     
+    public String[][][] laadPuzzel1() {
+        String[][][] puzzel = new String[10][10][5];
+        
+        // borders
+        for(int i=0;i<10;i++) {
+            puzzel[i][0][0] = "VasteMuur";
+        }
+        for(int i=0;i<10;i++) {
+            puzzel[0][i][0] = "VasteMuur";
+        }
+        
+        return puzzel;
+    }
+    
+    public String[][][] laadPuzzel2() {
+        String[][][] puzzel = new String[10][10][5];
+        return puzzel;
+    }
+    
+    public String[][][] laadPuzzel3() {
+        String[][][] puzzel = new String[10][10][5];
+        return puzzel;
+    }
+    
     public int getVlakHoogte() {
         return vlak_hoogte;
     }
