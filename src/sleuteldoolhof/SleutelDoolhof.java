@@ -11,8 +11,11 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 /**
+ * Sleutel doolhof spel gemaakt voor school!
  *
  * @author nebbii
+ * 
+ * @repository https://github.com/nebbii/SleutelDoolhof
  */
 public class SleutelDoolhof {
     
@@ -28,14 +31,12 @@ public class SleutelDoolhof {
      */
     public static void main(String[] args) {
         /* Creating! */
-        
         JFrame frame = new JFrame("Sleutel Doolhof");
         JPanel panel = new JPanel();
         
         // create speelveld
+        // source: https://www.youtube.com/watch?v=3cuVqLxNBbc
         Speelveld speelveld = new Speelveld(10, 10);
-        
-        // place puzzle
         String[][][] vlakItems = speelveld.laadPuzzel1();
         
         panel.setLayout(new GridLayout(speelveld.getVlakBreedte(), speelveld.getVlakHoogte(), 5, 5));
@@ -43,7 +44,7 @@ public class SleutelDoolhof {
         // create jlabel array
         JLabel gridLabels[][] = new JLabel[10][10];
         
-        // render ik field
+        // place jlabels in grid
         for(int i=0;i < speelveld.getVlakBreedte(); i++) {
             for(int j=0; j < speelveld.getVlakHoogte(); j++) {
                 gridLabels[i][j] = new JLabel(vlakItems[i][j][0]);
