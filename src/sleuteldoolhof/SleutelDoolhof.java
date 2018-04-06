@@ -81,13 +81,16 @@ public class SleutelDoolhof {
                     case "Speler":
                         gridLabels[j][i].setIcon(ImgSpeler);
                         break;
+                    case "Eindvlak":
+                        gridLabels[j][i].setIcon(ImgEindvlak);
+                        break;
                     default:
                 }
             }
         }
         
         // create player
-        Speler speler = new Speler(1, 1);
+        Speler speler = new Speler(0, 0);
         
         /* End Creating! */
         /* Rendering! */
@@ -118,6 +121,9 @@ public class SleutelDoolhof {
                                 break;
                             case "Speler":
                                 gridLabels[j][i].setIcon(ImgSpeler);
+                                break;
+                            case "Eindvlak":
+                                gridLabels[j][i].setIcon(ImgEindvlak);
                                 break;
                             default:
                         }

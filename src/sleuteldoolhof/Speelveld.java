@@ -42,6 +42,7 @@ public class Speelveld {
         
         // block
         
+        
         // speler
         puzzel[0][0][0] = "Speler";
         

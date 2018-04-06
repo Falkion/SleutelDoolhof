@@ -17,11 +17,12 @@ public class Speler extends VlakObject
        return this.huidigeSleutel; 
     }
 
-    public void move(Speelveld speelveld, String[][][] grid, int key) {
+    public String[][][] move(Speelveld speelveld, String[][][] grid, int key) {
         // n is next space
         int[] n = new int[2];
-        n[0] = this.getXpos();
-        n[1] = this.getYpos();
+        int[] ls = new int[2];
+        n[0] = ls[0] = this.getXpos();
+        n[1] = ls[1] = this.getYpos();
         
         switch(key) {
             case 37: // left
@@ -70,6 +71,10 @@ public class Speler extends VlakObject
                 break;
             default:
         }
+        grid[n[0]][n[1]][0] = "Speler";
+        grid[ls[0]][ls[1]][0] = "Leegvlak";
+        
+        return grid;
     }
 
     /**

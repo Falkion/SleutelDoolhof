@@ -24,3 +24,5 @@ hs_err_pid*
 # editor cache
 *.swp
 /build/
+
+Thumbs.db
