@@ -12,17 +12,21 @@ package sleuteldoolhof;
 public class Speelveld {
     private int vlak_hoogte;
     private int vlak_breedte;
+    public String[][][] vlakItems;
     
     public Speelveld(int vh, int vb) {
         this.vlak_hoogte = vh;
         this.vlak_breedte = vb;
+        this.vlakItems = this.nukeGrid();
     }
     
     public String[][][] reset() {
         return laadPuzzel1();
     }
     
-    public String[][][] nukeGrid(String[][][] grid) {
+    public String[][][] nukeGrid() {
+        String[][][] grid = new String[this.vlak_hoogte][this.vlak_breedte][5];
+        
         for(int i=0;i<10;i++) {
             for(int j=0;j<10;j++) {
                 grid[i][j][0] = "Leegvlak";
@@ -36,7 +40,7 @@ public class Speelveld {
         String[][][] puzzel = new String[10][10][5];
         
         // legevlakken overal
-        puzzel = nukeGrid(puzzel);
+        puzzel = nukeGrid();
         
         // walls
         

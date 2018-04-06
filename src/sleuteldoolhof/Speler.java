@@ -17,7 +17,7 @@ public class Speler extends VlakObject
        return this.huidigeSleutel; 
     }
 
-    public String[][][] move(Speelveld speelveld, String[][][] grid, int key) {
+    public String[][][] move(Speelveld speelveld, int key) {
         // n is next space
         int[] n = new int[2];
         int[] ls = new int[2];
@@ -26,44 +26,36 @@ public class Speler extends VlakObject
         
         switch(key) {
             case 37: // left
-                System.out.print("Moved from "); System.out.print(n[0]); System.out.print("."); System.out.print(n[1]); System.out.print(" To ");
                 n[0] -= 1;
-                System.out.print(n[0]); System.out.print("."); System.out.println(n[1]); 
                 System.out.println("Left pressed");
-                if(this.checkFreeSpace(speelveld, grid, n)) {
+                if(this.checkFreeSpace(speelveld, speelveld.vlakItems, n)) {
                     this.setXpos(n[0]);
                     this.setYpos(n[1]);
                     System.out.println("Player moved left");
                 }
                 break;
             case 38: // up
-                System.out.print("Moved from "); System.out.print(n[0]); System.out.print("."); System.out.print(n[1]); System.out.print(" To ");
                 n[1] -= 1;
-                System.out.print(n[0]); System.out.print("."); System.out.println(n[1]); 
                 System.out.println("Up Pressed");
-                if(this.checkFreeSpace(speelveld, grid, n)) {
+                if(this.checkFreeSpace(speelveld, speelveld.vlakItems, n)) {
                     this.setXpos(n[0]);
                     this.setYpos(n[1]);
                     System.out.println("Player moved up");
                 }
                 break;
             case 39: // right
-                System.out.print("Moved from "); System.out.print(n[0]); System.out.print("."); System.out.print(n[1]); System.out.print(" To ");
                 n[0] += 1;
-                System.out.print(n[0]); System.out.print("."); System.out.println(n[1]); 
                 System.out.println("Right pressed");
-                if(this.checkFreeSpace(speelveld, grid, n)) {
+                if(this.checkFreeSpace(speelveld, speelveld.vlakItems, n)) {
                     this.setXpos(n[0]);
                     this.setYpos(n[1]);
                     System.out.print("Player moved to ");
                 }
                 break;
             case 40: // down
-                System.out.print("Moved from "); System.out.print(n[0]); System.out.print("."); System.out.print(n[1]); System.out.print(" To ");
                 n[1] += 1;
-                System.out.print(n[0]); System.out.print("."); System.out.println(n[1]); 
                 System.out.println("Right pressed");
-                if(this.checkFreeSpace(speelveld, grid, n)) {
+                if(this.checkFreeSpace(speelveld, speelveld.vlakItems, n)) {
                     this.setXpos(n[0]);
                     this.setYpos(n[1]);
                     System.out.println("Player moved down");
@@ -71,10 +63,10 @@ public class Speler extends VlakObject
                 break;
             default:
         }
-        grid[n[0]][n[1]][0] = "Speler";
-        grid[ls[0]][ls[1]][0] = "Leegvlak";
+        speelveld.vlakItems[this.getXpos()][this.getYpos()][0] = "Speler";
+        speelveld.vlakItems[ls[0]][ls[1]][0] = "Leegvlak";
         
-        return grid;
+        return speelveld.vlakItems;
     }
 
     /**

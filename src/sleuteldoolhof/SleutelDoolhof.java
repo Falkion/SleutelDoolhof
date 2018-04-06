@@ -51,7 +51,6 @@ public class SleutelDoolhof {
         // create speelveld
         // source: https://www.youtube.com/watch?v=3cuVqLxNBbc
         Speelveld speelveld = new Speelveld(10, 10);
-        String[][][] vlakItems = speelveld.laadPuzzel1();
         
         panel.setLayout(new GridLayout(speelveld.getVlakBreedte(), speelveld.getVlakHoogte(), 5, 5));
         
@@ -61,7 +60,7 @@ public class SleutelDoolhof {
         // place jlabels in grid
         for(int i=0;i < speelveld.getVlakBreedte(); i++) {
             for(int j=0; j < speelveld.getVlakHoogte(); j++) {
-                gridLabels[i][j] = new JLabel(vlakItems[i][j][0]);
+                gridLabels[i][j] = new JLabel(speelveld.vlakItems[i][j][0]);
             }
         }
         
@@ -71,7 +70,7 @@ public class SleutelDoolhof {
         for(int i=0;i < speelveld.getVlakBreedte(); i++) {
             for(int j=0; j < speelveld.getVlakHoogte(); j++) {
                 panel.add(gridLabels[j][i]);
-                switch(vlakItems[j][i][0]) {
+                switch(speelveld.vlakItems[j][i][0]) {
                     case "VasteMuur":
                         gridLabels[j][i].setIcon(ImgVasteMuur);
                         break;
@@ -105,14 +104,14 @@ public class SleutelDoolhof {
                  * right=39
                  * down=40
                  */
-                speler.move(speelveld, vlakItems, e.getKeyCode());
+                speelveld.vlakItems = speler.move(speelveld, e.getKeyCode());
                 
-                vlakItems[speler.getXpos()][speler.getYpos()][0] = "Speler";
+                speelveld.vlakItems[speler.getXpos()][speler.getYpos()][0] = "Speler";
                 
                 for(int i=0;i < speelveld.getVlakBreedte(); i++) {
                     for(int j=0; j < speelveld.getVlakHoogte(); j++) {
-                        gridLabels[j][i].setText(vlakItems[j][i][0]);
-                         switch(vlakItems[j][i][0]) {
+                        gridLabels[j][i].setText(speelveld.vlakItems[j][i][0]);
+                         switch(speelveld.vlakItems[j][i][0]) {
                             case "VasteMuur":
                                 gridLabels[j][i].setIcon(ImgVasteMuur);
                                 break;
