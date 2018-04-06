@@ -42,6 +42,11 @@ public class SleutelDoolhof {
         JFrame frame = new JFrame("Sleutel Doolhof");
         JPanel panel = new JPanel();
         
+        // load images
+        ImageIcon ImgVasteMuur = new ImageIcon(".\\src\\sleuteldoolhof\\Images\\VasteMuur.png");
+        ImageIcon ImgLeegVlak = new ImageIcon(".\\src\\sleuteldoolhof\\Images\\LeegVlak.png");
+        ImageIcon ImgSpeler = new ImageIcon(".\\src\\sleuteldoolhof\\Images\\Speler.png");
+        
         // create speelveld
         // source: https://www.youtube.com/watch?v=3cuVqLxNBbc
         Speelveld speelveld = new Speelveld(10, 10);
@@ -65,6 +70,18 @@ public class SleutelDoolhof {
         for(int i=0;i < speelveld.getVlakBreedte(); i++) {
             for(int j=0; j < speelveld.getVlakHoogte(); j++) {
                 panel.add(gridLabels[j][i]);
+                switch(vlakItems[j][i][0]) {
+                    case "VasteMuur":
+                        gridLabels[j][i].setIcon(ImgVasteMuur);
+                        break;
+                    case "LeegVlak":
+                        gridLabels[j][i].setIcon(ImgLeegVlak);
+                        break;
+                    case "Speler":
+                        gridLabels[j][i].setIcon(ImgSpeler);
+                        break;
+                    default:
+                }
             }
         }
         
@@ -91,6 +108,18 @@ public class SleutelDoolhof {
                 for(int i=0;i < speelveld.getVlakBreedte(); i++) {
                     for(int j=0; j < speelveld.getVlakHoogte(); j++) {
                         gridLabels[j][i].setText(vlakItems[j][i][0]);
+                         switch(vlakItems[j][i][0]) {
+                            case "VasteMuur":
+                                gridLabels[j][i].setIcon(ImgVasteMuur);
+                                break;
+                            case "LeegVlak":
+                                gridLabels[j][i].setIcon(ImgLeegVlak);
+                                break;
+                            case "Speler":
+                                gridLabels[j][i].setIcon(ImgSpeler);
+                                break;
+                            default:
+                        }
                     }
                 }
             }
