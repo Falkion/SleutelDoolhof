@@ -113,20 +113,26 @@ public class SleutelDoolhof {
                         gridLabels[j][i].setText(speelveld.vlakItems[j][i][0]);
                          switch(speelveld.vlakItems[j][i][0]) {
                             case "VasteMuur":
+                                //System.out.print("M");
                                 gridLabels[j][i].setIcon(ImgVasteMuur);
                                 break;
-                            case "LeegVlak":
+                            case "Leegvlak":
+                                //System.out.print(".");
                                 gridLabels[j][i].setIcon(ImgLeegvlak);
                                 break;
                             case "Speler":
+                                //System.out.print("S");
                                 gridLabels[j][i].setIcon(ImgSpeler);
                                 break;
                             case "Eindvlak":
+                                //System.out.print("E");
                                 gridLabels[j][i].setIcon(ImgEindvlak);
                                 break;
                             default:
+                                //System.out.print("N");
                         }
                     }
+                    //System.out.println("");
                 }
             }
 
