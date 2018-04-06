@@ -12,6 +12,14 @@ import java.awt.event.KeyListener;
 
 /**
  * Sleutel doolhof spel gemaakt voor school!
+ * 
+ * TODO:
+ * - grid redrawing
+ * - grafische aspect
+ * - sleutels kunnen oppakken 
+ * - barricades kunnen openmaken
+ * - collisie met barricades
+ * - spel kunnen winnen door op eindveld te staan
  *
  * @author nebbii
  * 
