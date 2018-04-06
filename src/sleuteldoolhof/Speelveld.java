@@ -25,7 +25,7 @@ public class Speelveld {
     public String[][][] nukeGrid(String[][][] grid) {
         for(int i=0;i<10;i++) {
             for(int j=0;j<10;j++) {
-                grid[i][j][0] = "LeegVlak";
+                grid[i][j][0] = "Leegvlak";
             }
         }
         return grid;
@@ -39,16 +39,14 @@ public class Speelveld {
         puzzel = nukeGrid(puzzel);
         
         // walls
-        for(int i=0;i<10;i++) {
-            for(int j=0;j<10;j++) {
-                if(i==0 || j==0) {
-                    puzzel[i][j][0] = "VasteMuur";
-                }
-            }
-        }
+        
+        // block
         
         // speler
-        puzzel[4][4][0] = "Speler";
+        puzzel[0][0][0] = "Speler";
+        
+        // eindvlak
+        puzzel[9][9][0] = "Eindvlak";
         
         return puzzel;
     }

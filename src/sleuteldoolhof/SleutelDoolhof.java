@@ -44,8 +44,9 @@ public class SleutelDoolhof {
         
         // load images
         ImageIcon ImgVasteMuur = new ImageIcon(".\\src\\sleuteldoolhof\\Images\\VasteMuur.png");
-        ImageIcon ImgLeegVlak = new ImageIcon(".\\src\\sleuteldoolhof\\Images\\LeegVlak.png");
+        ImageIcon ImgLeegvlak = new ImageIcon(".\\src\\sleuteldoolhof\\Images\\Leegvlak.png");
         ImageIcon ImgSpeler = new ImageIcon(".\\src\\sleuteldoolhof\\Images\\Speler.png");
+        ImageIcon ImgEindvlak = new ImageIcon(".\\src\\sleuteldoolhof\\Images\\Eindvlak.png");
         
         // create speelveld
         // source: https://www.youtube.com/watch?v=3cuVqLxNBbc
@@ -74,8 +75,8 @@ public class SleutelDoolhof {
                     case "VasteMuur":
                         gridLabels[j][i].setIcon(ImgVasteMuur);
                         break;
-                    case "LeegVlak":
-                        gridLabels[j][i].setIcon(ImgLeegVlak);
+                    case "Leegvlak":
+                        gridLabels[j][i].setIcon(ImgLeegvlak);
                         break;
                     case "Speler":
                         gridLabels[j][i].setIcon(ImgSpeler);
@@ -86,7 +87,7 @@ public class SleutelDoolhof {
         }
         
         // create player
-        Speler speler = new Speler(0, 0);
+        Speler speler = new Speler(1, 1);
         
         /* End Creating! */
         /* Rendering! */
@@ -113,7 +114,7 @@ public class SleutelDoolhof {
                                 gridLabels[j][i].setIcon(ImgVasteMuur);
                                 break;
                             case "LeegVlak":
-                                gridLabels[j][i].setIcon(ImgLeegVlak);
+                                gridLabels[j][i].setIcon(ImgLeegvlak);
                                 break;
                             case "Speler":
                                 gridLabels[j][i].setIcon(ImgSpeler);
