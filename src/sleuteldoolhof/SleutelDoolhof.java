@@ -64,7 +64,7 @@ public class SleutelDoolhof {
         // voeg jlabels toe aan grid
         for(int i=0;i < speelveld.getVlakBreedte(); i++) {
             for(int j=0; j < speelveld.getVlakHoogte(); j++) {
-                panel.add(gridLabels[i][j]);
+                panel.add(gridLabels[j][i]);
             }
         }
         
@@ -90,7 +90,7 @@ public class SleutelDoolhof {
                 
                 for(int i=0;i < speelveld.getVlakBreedte(); i++) {
                     for(int j=0; j < speelveld.getVlakHoogte(); j++) {
-                        gridLabels[i][j].setText(vlakItems[i][j][0]);
+                        gridLabels[j][i].setText(vlakItems[j][i][0]);
                     }
                 }
             }

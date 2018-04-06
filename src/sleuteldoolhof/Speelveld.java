@@ -18,20 +18,26 @@ public class Speelveld {
         this.vlak_breedte = vb;
     }
     
-    public void reset() {
-        
+    public String[][][] reset() {
+        return laadPuzzel1();
     }
+    
+    public String[][][] nukeGrid(String[][][] grid) {
+        for(int i=0;i<10;i++) {
+            for(int j=0;j<10;j++) {
+                //grid[i][j][0] = "Leegvlak";
+                grid[i][j][0] = Integer.toString(i) + "." + Integer.toString(j);
+            }
+        }
+        return grid;
+    }
+    
     
     public String[][][] laadPuzzel1() {
         String[][][] puzzel = new String[10][10][5];
         
-        // borders
-        for(int i=0;i<10;i++) {
-            puzzel[i][0][0] = "Leegvlak";
-        }
-        for(int i=0;i<10;i++) {
-            puzzel[0][i][0] = "Leegvlak";
-        }
+        // legevlakken overal
+        puzzel = nukeGrid(puzzel);
         
         return puzzel;
     }
