@@ -31,7 +31,7 @@ public class Speler extends VlakObject
                 if(this.checkFreeSpace(speelveld, speelveld.vlakItems, n)) {
                     this.setXpos(n[0]);
                     this.setYpos(n[1]);
-                    System.out.println("Player moved left");
+                    //System.out.println("Player moved left");
                 }
                 break;
             case 38: // up
@@ -40,7 +40,7 @@ public class Speler extends VlakObject
                 if(this.checkFreeSpace(speelveld, speelveld.vlakItems, n)) {
                     this.setXpos(n[0]);
                     this.setYpos(n[1]);
-                    System.out.println("Player moved up");
+                    //System.out.println("Player moved up");
                 }
                 break;
             case 39: // right
@@ -49,16 +49,16 @@ public class Speler extends VlakObject
                 if(this.checkFreeSpace(speelveld, speelveld.vlakItems, n)) {
                     this.setXpos(n[0]);
                     this.setYpos(n[1]);
-                    System.out.print("Player moved to ");
+                    //System.out.println("Player moved right");
                 }
                 break;
             case 40: // down
                 n[1] += 1;
-                System.out.println("Right pressed");
+                System.out.println("Down pressed");
                 if(this.checkFreeSpace(speelveld, speelveld.vlakItems, n)) {
                     this.setXpos(n[0]);
                     this.setYpos(n[1]);
-                    System.out.println("Player moved down");
+                    //System.out.println("Player moved down");
                 }
                 break;
             default:
@@ -83,11 +83,11 @@ public class Speler extends VlakObject
             if(!"VasteMuur".equals(grid[space[0]][space[1]][0])) {
                 return true;
             } else {
-                System.out.println("fs: Space busy");
+                //System.out.println("fs: Space busy");
                 return false;
             }
         } else {
-            System.out.println("fs: out of bounds!");
+            //System.out.println("fs: out of bounds!");
             return false;
         }
     }

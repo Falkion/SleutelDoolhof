@@ -106,7 +106,7 @@ public class SleutelDoolhof {
                  */
                 speelveld.vlakItems = speler.move(speelveld, e.getKeyCode());
                 
-                speelveld.vlakItems[speler.getXpos()][speler.getYpos()][0] = "Speler";
+                //speelveld.vlakItems[speler.getXpos()][speler.getYpos()][0] = "Speler";
                 
                 for(int i=0;i < speelveld.getVlakBreedte(); i++) {
                     for(int j=0; j < speelveld.getVlakHoogte(); j++) {
